@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hello {{name}}</h1>
+
+
+<h1>For Addition Using GET REQUEST</h1> 
+<form action="add">
+        Enter 1st Number : <input type="text" name="numOne"><br>
+        Enter 2st Number : <input type="text" name="numTwo"><br>
+        <button type="submit">Sumbit</button>
+</form>
+
+<h1>For Multiplication Using GET REQUEST</h1>
+<form action="multiply">
+        Enter 1st Number : <input type="text" name="numOne"><br>
+        Enter 2st Number : <input type="text" name="numTwo"><br>
+        <button type="submit">Sumbit</button>
+</form>
+
+<h1>For Dividation Using POST REQUEST</h1>
+<form action="Dividation" method='post'>
+                {% csrf_token %}
+        Enter 1st Number : <input type="text" name="numOneD"><br>
+        Enter 2st Number : <input type="text" name="numTwoD"><br>
+        <button type="submit">Sumbit</button>
+</form>
+{% endblock %}
