@@ -16,8 +16,6 @@ def login(request):
         else:
             messages.info(request,"Invalid credentials")
             return redirect('login')
-
-
     else:
         return render(request,'login.html')
 
@@ -53,3 +51,7 @@ def register(request):
         return redirect('/')
     else:
         return render(request,'register.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

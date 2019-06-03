@@ -33,8 +33,14 @@
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="index.html">Home</a></li>
+
+									{% if user.is_authenticated %}
+									<li><a>Hello, {{user.first_name}} </a></li>
+									<li><a href="accounts/logout">Logout</a></li>
+									{% else %}
 									<li><a href="accounts/register">Register</a></li>
 									<li><a href="accounts/login">Login</a></li>
+									{% endif %}
 									<li><a href="news.html">News</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
