@@ -265,9 +265,15 @@
 								{% endif %}
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
+								{% if user.is_authenticated %}
+								<div class="destination_title"><a href="detail">{{dest.name}}</a></div>
 								<div class="destination_subtitle"><p>{{dest.description}}</p></div>
 								<div class="destination_price">From ${{dest.price}}</div>
+								{% else %}
+								<div class="destination_title"><a href="accounts/login">{{dest.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.description}}</p></div>
+								<div class="destination_price">From ${{dest.price}}</div>
+								{% endif %}
 							</div>
 						</div>
 						{% endfor %}
